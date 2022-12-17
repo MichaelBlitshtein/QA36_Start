@@ -54,13 +54,13 @@ public class Login {
         WebElement email = wd.findElement(By.name("email"));
         email.click();
         email.clear();
-        email.sendKeys("noa@gmail.com");
+        email.sendKeys("michael87b@gmail.com");
 
         // find password + click +clear + type
         WebElement password = wd.findElement(By.name("password"));
         password.click();
         password.clear();
-        password.sendKeys("Nnoa12345$");
+        password.sendKeys("Michael123!$");
 
         // submit  form
         // find button login + click
@@ -74,6 +74,24 @@ public class Login {
 
     @Test
     public void registrationSuccess(){
+        WebElement login = wd.findElement(By.linkText("LOGIN"));
+        login.click();
+
+        WebElement email = wd.findElement(By.name("email"));
+        email.click();
+        email.clear();
+        email.sendKeys("michael87b+2@gmail.com");
+
+        WebElement password = wd.findElement(By.name("password"));
+        password.click();
+        password.clear();
+        password.sendKeys("Michael123!$");
+
+        List<WebElement> buttons1 = wd.findElements(By.tagName("button"));
+        WebElement buttonReg = buttons1.get(1);
+        buttonReg.click();
+
+
 
     }
     @AfterMethod

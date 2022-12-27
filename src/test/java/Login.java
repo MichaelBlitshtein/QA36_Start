@@ -135,6 +135,8 @@ public class Login {
         // Объединение !!
         //найти элемент div, у которого есть id со значением "root"  и класс со значением container
         wd.findElement(By.cssSelector("div#root.container"));
+        wd.findElement(By.cssSelector("div[id='root'][class='container']"));
+
         // найти элемент а, у которого есть атрибут href со значением /login
         wd.findElement(By.cssSelector("a[href='/login']"));
         // найти элемент input, у которого есть атрибут name cо значением email

@@ -20,6 +20,50 @@ public class Index {
 
     }
 
+
+
+    @Test
+    public void itemsTests(){
+        // find Item1 & click() ===> assert that "div-alert" contains message  "Clicked by Item 1"
+       WebElement item1 =  wd.findElement(By.cssSelector("[href='#item1']"));
+       item1.click();
+       WebElement divAlert = wd.findElement(By.cssSelector("#alert"));
+       String text = divAlert.getText();
+       Assert.assertTrue(text.contains("Clicked by Item 1"));
+
+        // find Item3 & click() ===> assert that "div-alert" contains message  "Clicked by Item 3"
+        WebElement item3 = wd.findElement(By.cssSelector("[href='#item3']"));
+        item3.click();
+        text = divAlert.getText();
+        Assert.assertTrue(text.contains("Clicked by Item 3"));
+    }
+
+    @Test
+    public void formTests(){
+        // fill name & fill surename & click send
+        WebElement name = wd.findElement(By.cssSelector("[name='name']"));
+        name.click();
+        name.clear();
+        name.sendKeys("John");
+
+        WebElement surename = wd.findElement(By.cssSelector("[name='surename']"));
+        surename.click();
+        surename.clear();
+        surename.sendKeys("Hopkins");
+
+
+        WebElement sendButton = wd.findElement(By.cssSelector(".btn"));
+        sendButton.click();
+
+        // Assert that "div-alert" contains text with name + surename
+        WebElement divAlert = wd.findElement(By.cssSelector("#alert"));
+        String text1 = divAlert.getText();
+        Assert.assertTrue(text1.contains(name.getText()+surename.getText()));
+
+    }
+
+
+
     @Test
     public void tableTest(){
          //проверь правда ли в таблице 4 строки

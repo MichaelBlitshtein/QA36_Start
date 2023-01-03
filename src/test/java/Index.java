@@ -25,14 +25,14 @@ public class Index {
     @Test
     public void itemsTests(){
         // find Item1 & click() ===> assert that "div-alert" contains message  "Clicked by Item 1"
-       WebElement item1 =  wd.findElement(By.cssSelector("[href='#item1']"));
-       item1.click();
+       wd.findElement(By.cssSelector("[href='#item1']")).click();
+
        WebElement divAlert = wd.findElement(By.cssSelector("#alert"));
        String text = divAlert.getText();
        Assert.assertTrue(text.contains("Clicked by Item 1"));
 
         // find Item3 & click() ===> assert that "div-alert" contains message  "Clicked by Item 3"
-        WebElement item3 = wd.findElement(By.cssSelector("[href='#item3']"));
+        WebElement item3 = wd.findElement(By.xpath("//li[3]"));   //   /html/body/div/div/ul/li[3]     абсолютный путь
         item3.click();
         text = divAlert.getText();
         Assert.assertTrue(text.contains("Clicked by Item 3"));

@@ -24,10 +24,10 @@ public class CssXpath {
         wd.findElement(By.xpath("//div[@class='focus']"));
 
         wd.findElement(By.cssSelector("input[type='text']"));
-        wd.findElement(By.xpath("//input[text()='text']"));
+        wd.findElement(By.xpath("//input[@type='text']"));
 
         wd.findElement(By.cssSelector("div #host"));
-        wd.findElement(By.xpath("//div[@id='host']"));
+        wd.findElement(By.xpath("//div//*[@id='host']"));
 
         wd.findElement(By.cssSelector("div.sort>div:nth-child(2)"));
         wd.findElement(By.xpath("//div[@class='sort']/div[2]"));
@@ -43,7 +43,7 @@ public class CssXpath {
         wd.findElement(By.cssSelector("button.submit"));
 
         wd.findElement(By.xpath("//div/div/img[@src='paris.jpg']"));
-        wd.findElement(By.cssSelector("img[src='paris.jpg']"));
+        wd.findElement(By.cssSelector("div>div>img[src='paris.jpg']"));
 
         wd.findElement(By.xpath("//div[@class='first' and @class='list']"));
         wd.findElement(By.cssSelector("div.first.list"));
@@ -55,7 +55,7 @@ public class CssXpath {
         wd.findElement(By.cssSelector("div#idName h1:last-child"));
 
         wd.findElement(By.xpath("//table[@id]//tr[last()]"));
-        wd.findElement(By.cssSelector("table#id tr:last-child"));
+        wd.findElement(By.cssSelector("table[id] tr:last-child"));
 
         wd.findElement(By.xpath("//a[starts-with(@id,'ret')]"));
         wd.findElement(By.cssSelector("a[id ^='ret']"));
